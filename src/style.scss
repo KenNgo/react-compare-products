@@ -1,3 +1,8 @@
+$black: #000;
+$white: #fff;
+$red: #ff0000;
+$green: green;
+
 .app {
     text-align: center;
     width: 1200px;
@@ -19,7 +24,7 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: $white;
 }
 
 .App-link {
@@ -62,16 +67,16 @@ to {
                     margin: 5px 0;
                     font-size: 12px;
                     font-weight: 300;
-                    color: #212;
+                    color: $black;
                 }
                 &.has-error {
                     input {
-                        border: solid 2px #ff0000;
+                        border: solid 2px $red;
                     }
                 }
                 &.has-success {
                     input {
-                        border: solid 2px green;
+                        border: solid 2px $green;
                     }
                 }
             }
@@ -89,7 +94,7 @@ to {
                     display: table-cell;
                     vertical-align: middle;
                     font-size: 14px;
-                    color: #000;
+                    color: $black;
                     padding: 10px 20px;
                     border-radius: 5px;
                     cursor: pointer;
@@ -106,7 +111,7 @@ to {
             box-sizing: border-box;
             vertical-align: top;
             &:first-child {
-                border-right: solid 1px #000;
+                border-right: solid 1px $black;
             }
             .product-image {
                 width: 100%;
@@ -138,6 +143,7 @@ to {
                 .content {
                     box-sizing: border-box;
                     width: 100%;
+                    font-size: 12px;
                     table {
                         border-collapse: collapse;
                         tr:last-child {
@@ -148,11 +154,12 @@ to {
                     }
                     table tr {
                         td {
-                            border-bottom: solid 1px #000;
+                            border-bottom: solid 1px $black;
                             padding: 10px;
                         }
                         td:first-child {
                             width: 35%;
+                            font-weight: 700;
                         }
                         td:last-child {
                             width: 65%;

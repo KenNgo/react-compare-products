@@ -41,22 +41,26 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let title = '';
+    let imageField = '';
+    let infoDetail = '';
+    let render = '';
     if (this.getValidationState(this.state.inputField1) === 'error' ||
     this.getValidationState(this.state.inputField2) === 'error') {
       return;
     } else {
       this._getHTML( this.state.inputField1, function (response) {
-        const render = document.querySelector( '#title-crawl1' );
-        let title  = response.querySelector('.product-view .topview');
-        let imageField = response.querySelector('.product-img-box');
-        let infoDetail = response.querySelector('.technical-info');
+        render = document.querySelector( '#title-crawl1' );
+        response.querySelector('.product-view .topview') !== null ? title = response.querySelector('.product-view .topview') : title = '';
+        response.querySelector('.product-img-box') !== null ? imageField = response.querySelector('.product-img-box') : imageField = '';
+        response.querySelector('.technical-info') !== null ? infoDetail = response.querySelector('.technical-info') : infoDetail = '';
         render.innerHTML = title.innerHTML + imageField.innerHTML + `<div class="technical-info">${infoDetail.innerHTML}</div>`;
       });
       this._getHTML( this.state.inputField2, function (response) {
-        const render = document.querySelector( '#title-crawl2' );
-        let title  = response.querySelector('.product-view .topview');
-        let imageField = response.querySelector('.product-img-box');
-        let infoDetail = response.querySelector('.technical-info');
+        render = document.querySelector( '#title-crawl2' );
+        response.querySelector('.product-view .topview') !== null ? title = response.querySelector('.product-view .topview') : title = '';
+        response.querySelector('.product-img-box') !== null ? imageField = response.querySelector('.product-img-box') : imageField = '';
+        response.querySelector('.technical-info') !== null ? infoDetail = response.querySelector('.technical-info') : infoDetail = '';
         render.innerHTML = title.innerHTML + imageField.innerHTML + `<div class="technical-info">${infoDetail.innerHTML}</div>`;
       });
     }
